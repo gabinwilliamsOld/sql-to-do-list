@@ -8,6 +8,8 @@ $(document).ready(function () {
 
   $('#submitBtn').on('click', addTask);
   $('#displayTasks').on('click', '.deleteBtn', deleteTask);
+  $('#displayTasks').on('click', '.completeBtn', markTaskComplete);
+  
 
 }); // end doc ready
 
@@ -82,4 +84,27 @@ function deleteTask() {
           alert('error in delete');
         });
     
-    }
+    }// end deleteTask
+
+    // PUT ROUTE
+
+    function markTaskComplete() {
+      let taskToUpdate = $(this).closest('tr').data('id');
+      
+      let completeStatus = {
+        complete: true
+      };
+
+      $.ajax({
+        type: 'PUT',
+        url: `/todo/${taskToUpdate}`,
+        data: completeStatus,
+      })
+        .then(function (response) {
+          getTasks();
+        })
+        .catch(function (error) {
+          alert('error in update');
+        });
+      
+    }// end markTaskComplete

@@ -77,6 +77,31 @@ router.delete('/:id', (req, res) => {
 });// end DELETE
 
 
+// PUT
+router.put('/:id', (req, res) => {
+  // id of koala to change status
+  const id = req.params.id;
+  // changed status info from client
+  const completeStatus = req.body.complete;
+
+  // query to SQL
+  const queryText = `
+    UPDATE "todo" SET "complete" = $1 WHERE "id" = $2;
+  `;
+
+  pool
+    .query(queryText, [completeStatus, id])
+    .then((result) => {
+      console.log(result);
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.sendStatus(500);
+    });
+});
+
+
 
 
 
