@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 // DataBase CONNECTION
 const pool = require('../modules/pool.js');
 
@@ -51,7 +52,29 @@ router.post('/', (req, res) => {
       console.log(error);
       res.sendStatus(500);
     });
-});
+});// end POST
+
+
+// DELETE
+router.delete('/:id', (req, res) => {
+  // target id of thing being deleted
+  let id = req.params.id;
+  console.log('Delete route called with id of: ', id);
+
+  // sql to delete item from database
+  const queryText = `DELETE FROM "todo" WHERE "id" = $1;`;
+
+  // sending sql code to postico
+  pool.query(queryText, [id])
+    .then((result) => {
+        
+      res.sendStatus(204);
+
+    }).catch((error) => {
+      console.log(error);
+      res.sendStatus(500);
+    });
+});// end DELETE
 
 
 
