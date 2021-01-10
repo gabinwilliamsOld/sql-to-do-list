@@ -3,7 +3,9 @@
 form {
   display: flex;
 }
-
+.container {
+  padding-top: 50px;
+}
 body, html {
   height: 100%;
 }
@@ -27,13 +29,8 @@ td {
 }
 
 .bg { 
-  /* The image used */
-  background-image: url('/images/desk-1081708_1920.jpg');
-
-  /* Full height */
   height: 100%; 
-
-  /* Center and scale the image nicely */
+  background-image: url('/images/desk-1081708_1920.jpg');
   background-color: rgba(255, 255, 255, 0.488);
   background-blend-mode: lighten;
   background-position: center;
