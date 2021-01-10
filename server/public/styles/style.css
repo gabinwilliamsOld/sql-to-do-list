@@ -1,6 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Quicksand:wght@300;600&display=swap');
+
 form {
   display: flex;
 }
+
+body, html {
+  height: 100%;
+}
+
+h1 {
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 50px;
+  margin: 0;
+}
+
+tr {
+  font-family: 'Quicksand', sans serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+td {
+  font-family: 'Quicksand', sans serif;
+  font-size: 15px;
+  
+}
+
+.bg { 
+  /* The image used */
+  background-image: url('/images/desk-1081708_1920.jpg');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-color: rgba(255, 255, 255, 0.488);
+  background-blend-mode: lighten;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
 
 #taskIn {
   width: 600px;
