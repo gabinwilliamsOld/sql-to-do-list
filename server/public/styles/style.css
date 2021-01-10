@@ -1,3 +1,42 @@
+form {
+  display: flex;
+}
+
 #taskIn {
   width: 600px;
+}
+
+.fa-plus {
+  color: rgba(24, 145, 42, 0.728);
+}
+
+.fa-circle {
+  color: rgba(255, 0, 0, 0.468);
+}
+
+.fa-circle:hover {
+  color: red;
+}
+
+.fa-plus:hover {
+  color: rgb(4, 243, 40);
+}
+
+.fa-close {
+  color: rgba(255, 0, 0, 0.468);
+}
+
+.fa-close:hover {
+  color: red;
+}
+
+.strike {
+  color: red;
+  text-decoration: line-through;
+}
+
+.normal {
+  color: black;
+  text-decoration: none;
+  text-align: left;
 }

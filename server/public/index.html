@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./vendors/bootstrap.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="https://kit.fontawesome.com/fcca534832.js" crossorigin="anonymous"></script>
   <script src="./vendors/jquery-3.5.1.js"></script>
   <link rel="stylesheet" href="./styles/style.css">
   <script src="./scripts/client.js"></script>
@@ -16,10 +16,11 @@
       <h1>ToDo App</h1>
     </header>
   <div>
+    <form>
       <input id="taskIn" type="text">
-      <button id="submitBtn" type="submit">Add Task</button>
-   
-    <section class="koala-container">
+      <button id="submitBtn" type="submit"class="btn"><i class="fa fa-plus"></i></button>
+    </form>
+    <section>
       <table class="table">
         <thead>
           <tr class="table-heading">
@@ -30,7 +31,5 @@
         </tbody>
       </table>
     </section>
-  
-  
 </body>
 </html>
