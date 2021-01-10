@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
 
 // POST
 router.post("/", (req, res) => {
-  // musicLibrary.push(req.body);
+  
   console.log(req.body);
   const newTask = req.body;
   // send body data to db
@@ -38,7 +38,7 @@ router.post("/", (req, res) => {
     .query(queryText, [newTask.task])
     .then((result) => {
       console.log(result);
-      //result is meaningless, only care about yay! or NO!
+      
       res.sendStatus(201);
     })
     .catch((error) => {
@@ -71,7 +71,7 @@ router.delete("/:id", (req, res) => {
 
 // PUT
 router.put("/:id", (req, res) => {
-  // id of koala to change status
+  // id of todo to change status
   const id = req.params.id;
   // changed status info from client
   const completeStatus = req.body.complete;

@@ -2,9 +2,9 @@ console.log("js");
 
 $(document).ready(function () {
   console.log("JQ");
-
+// Renders page with data in database if any
   getTasks();
-
+// CLICK LISTENERS
   $("#submitBtn").on("click", addTask);
   $("#displayTasks").on("click", ".deleteBtn", deleteTask);
   $("#displayTasks").on("click", ".completeBtn", markTaskComplete);
@@ -28,7 +28,7 @@ function getTasks() {
           <td><button class="deleteBtn btn"><i class="fa fa-close"></i></button></td>
         </tr>
       `);
-
+// logic for striking-through text and turning a color
       if (task.complete == true) {
         $(".markup").addClass("strike");
       } else {
@@ -45,7 +45,7 @@ function addTask() {
   const taskToSend = {
     task: $("#taskIn").val(),
   };
-
+// makes sure input field is filled in before submit button can be pushed
   if ($("#taskIn").val() == "") {
     alert("Type in task to add");
   } else {
@@ -72,6 +72,7 @@ function addTask() {
 // DELETE ROUTE
 
 function deleteTask() {
+  // targets id to make sure right row will be deleted
   const id = $(this).closest("tr").data("id");
   console.log(id);
 
